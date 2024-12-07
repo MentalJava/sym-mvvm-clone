@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sym_mvvm_clone/ui/component/s_color.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +44,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: const TextStyle(
+            color: SColor.black,
+          ),
+        ),
       ),
       body: Center(
         child: Column(
