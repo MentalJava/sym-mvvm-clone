@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
+import 'package:sym_mvvm_clone/ui/component/s_text.dart';
+import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,11 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(
-          widget.title,
-          style: const TextStyle(
-            color: SColor.black,
-          ),
+        title: const SText(
+          text: 'hi',
+          type: TextType.header1,
+          color: SColor.black,
         ),
       ),
       body: Center(
