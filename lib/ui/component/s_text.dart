@@ -16,7 +16,6 @@ class SText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = STypo.getStyle(type).copyWith(color: color);
-
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
