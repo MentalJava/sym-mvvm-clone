@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
+import 'package:sym_mvvm_clone/ui/component/s_text.dart';
+import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
 
 enum ButtonState {
   standard,
@@ -9,7 +11,7 @@ enum ButtonState {
 class SButton extends StatelessWidget {
   final ButtonState state;
   final VoidCallback? onCilcked;
-  final Widget text;
+  final String text;
   const SButton({
     super.key,
     this.onCilcked,
@@ -23,6 +25,15 @@ class SButton extends StatelessWidget {
         return SColor.main;
       case ButtonState.disabled:
         return SColor.grey1;
+    }
+  }
+
+  Color _getTextColor() {
+    switch (state) {
+      case ButtonState.standard:
+        return Colors.white;
+      case ButtonState.disabled:
+        return SColor.grey5;
     }
   }
 
@@ -41,8 +52,16 @@ class SButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
             color: _getBackgroundColor(),
           ),
-          child: Center(
-            child: text,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 16,
+            ),
+            child: Center(
+                child: SText(
+              text: text,
+              type: TextType.body1,
+              color: _getTextColor(),
+            )),
           ),
         ),
       ),

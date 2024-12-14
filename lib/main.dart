@@ -67,22 +67,14 @@ class _MyHomePageState extends State<MyHomePage> {
             SButton(
               state: ButtonState.standard,
               onCilcked: () {},
-              text: const SText(
-                text: '완료',
-                type: TextType.body1,
-                color: Colors.white,
-              ),
+              text: '완료',
             ),
             const SizedBox(
               height: 10,
             ),
             const SButton(
               state: ButtonState.disabled,
-              text: SText(
-                text: '완료',
-                type: TextType.body1,
-                color: SColor.grey6,
-              ),
+              text: '완료',
             ),
           ],
         ),

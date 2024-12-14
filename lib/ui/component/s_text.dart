@@ -16,16 +16,10 @@ class SText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = STypo.getStyle(type).copyWith(color: color);
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        vertical: 17,
-      ),
-      child: Text(
-        text,
-        overflow: TextOverflow.ellipsis,
-        style: style,
-      ),
+    return Text(
+      text,
+      overflow: TextOverflow.ellipsis,
+      style: style,
     );
   }
 }
