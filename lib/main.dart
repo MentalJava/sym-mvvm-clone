@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
 import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
@@ -62,6 +63,26 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            SButton(
+              state: ButtonState.standard,
+              onCilcked: () {},
+              text: const SText(
+                text: '완료',
+                type: TextType.body1,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const SButton(
+              state: ButtonState.disabled,
+              text: SText(
+                text: '완료',
+                type: TextType.body1,
+                color: SColor.grey6,
+              ),
             ),
           ],
         ),

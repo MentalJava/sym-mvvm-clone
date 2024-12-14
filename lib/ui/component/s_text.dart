@@ -17,10 +17,15 @@ class SText extends StatelessWidget {
   Widget build(BuildContext context) {
     final style = STypo.getStyle(type).copyWith(color: color);
 
-    return Text(
-      text,
-      overflow: TextOverflow.ellipsis,
-      style: style,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 17,
+      ),
+      child: Text(
+        text,
+        overflow: TextOverflow.ellipsis,
+        style: style,
+      ),
     );
   }
 }
