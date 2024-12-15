@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
+import 'package:sym_mvvm_clone/ui/component/s_text_field.dart';
+import 'package:sym_mvvm_clone/ui/component/s_text_field_controller.dart';
 import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
 
 void main() {
@@ -34,6 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final sTextFieldController = Get.put(STextFieldController());
   int _counter = 0;
 
   void _incrementCounter() {
@@ -83,6 +87,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 type: TextType.body1,
                 color: SColor.grey6,
               ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            STextField(
+              hintText: '닉네임을 입력해주세요',
+              controller: sTextFieldController,
             ),
           ],
         ),
