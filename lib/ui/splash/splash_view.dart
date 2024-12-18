@@ -19,24 +19,27 @@ class SplashView extends StatelessWidget {
         child: Obx(
           () {
             if (viewModel.isLoading.value) {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+              return Stack(
                 children: [
-                  Container(
-                    padding: const EdgeInsets.only(
-                      right: 84,
-                      left: 84,
-                    ),
-                    child: SvgPicture.asset(
-                      'assets/happy_sym.svg',
-                      fit: BoxFit.contain,
-                    ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          left: 84,
+                          right: 84,
+                          bottom: 280,
+                        ),
+                        child: SvgPicture.asset(
+                          'assets/happy_sym.svg',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ],
                   ),
-                  const Padding(
-                    padding: EdgeInsets.only(
-                      bottom: 200,
-                    ),
+                  const Center(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SText(
                           text: 'SYM',

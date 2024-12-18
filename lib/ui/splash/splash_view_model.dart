@@ -11,7 +11,7 @@ class SplashViewModel extends GetxController {
 
   Future<void> _simulateLoading() async {
     await Future.delayed(
-      const Duration(seconds: 20),
+      const Duration(seconds: 3),
       () {
         isLoading.value = false;
       },
