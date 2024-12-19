@@ -26,23 +26,12 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
+class MyHomePage extends StatelessWidget {
   final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  const MyHomePage({
+    super.key,
+    required this.title,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
             SButton(
               state: ButtonState.standard,
               onCilcked: () {},
@@ -78,13 +60,11 @@ class _MyHomePageState extends State<MyHomePage> {
               state: ButtonState.disabled,
               text: '완료',
             ),
+            const SizedBox(
+              height: 10,
+            ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
