@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
+
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
 import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
 
