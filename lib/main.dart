@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
+
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
 import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
 import 'package:sym_mvvm_clone/ui/splash/splash_view.dart';
