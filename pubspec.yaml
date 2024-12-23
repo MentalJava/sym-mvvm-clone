@@ -37,7 +37,6 @@ dependencies:
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.16
   get: ^4.6.6
-  flutter_svg: ^2.0.16
   flutter_native_splash: ^2.4.3
 
 
