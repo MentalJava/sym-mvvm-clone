@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
-
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
 import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
+import 'package:sym_mvvm_clone/ui/splash/splash_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,22 +15,27 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/splash',
+      getPages: [
+        GetPage(
+          name: '/splash',
+          page: () => const SplashView(),
+        ),
+        GetPage(
+          name: '/home',
+          page: () => const MyHomePage(),
+        )
+      ],
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  final String title;
   const MyHomePage({
     super.key,
-    required this.title,
   });
 
   @override
