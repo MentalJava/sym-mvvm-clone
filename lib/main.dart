@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
 import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
+import 'package:sym_mvvm_clone/ui/sign_in/sign_in_view.dart';
 import 'package:sym_mvvm_clone/ui/splash/splash_view.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  KakaoSdk.init(nativeAppKey: '61c510eaab6ee9f65a2011f944ce8b86');
   runApp(const MyApp());
 }
 
@@ -27,6 +31,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/home',
           page: () => const MyHomePage(),
+        ),
+        GetPage(
+          name: '/signIn',
+          page: () => SignInView(),
         )
       ],
     );
