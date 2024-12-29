@@ -67,6 +67,10 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
+    - assets/navigation/my_info.svg
+    - assets/navigation/emotion_diary.svg
+    - assets/icon/kakao_login.svg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
