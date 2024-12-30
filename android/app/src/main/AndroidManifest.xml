@@ -29,10 +29,10 @@
 
                 <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="61c510eaab6ee9f65a2011f944ce8b86" /> 
+            android:value="${KAKAO_NATIVE_KEY}" /> 
 
         <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
-            android:launchMode="singleTask"
+            android:launchMode="singleTask" 
             android:exported="true">
             
             <intent-filter android:label="flutter_web_auth">
@@ -43,7 +43,7 @@
 
                 <data
                     android:host="oauth"
-                    android:scheme="kakao61c510eaab6ee9f65a2011f944ce8b86" />
+                    android:scheme="kakao${KAKAO_NATIVE_KEY}" />
             </intent-filter>
         </activity>
 

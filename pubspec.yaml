@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   flutter_native_splash: ^2.4.3
   kakao_flutter_sdk_user: ^1.9.6
+  flutter_dotenv: ^5.2.1
 
 
 
@@ -70,6 +71,7 @@ flutter:
     - assets/navigation/my_info.svg
     - assets/navigation/emotion_diary.svg
     - assets/icon/kakao_login.svg
+    - assets/config/.env
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
