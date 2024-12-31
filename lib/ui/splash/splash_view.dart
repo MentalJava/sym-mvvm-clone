@@ -12,7 +12,7 @@ class SplashView extends StatelessWidget {
   Widget build(BuildContext context) {
     Future.delayed(
       const Duration(seconds: 3),
-      () => Get.offNamed('/signIn'),
+      () => Get.offNamed('/signUp'),
     );
     return Scaffold(
       backgroundColor: Colors.white,
