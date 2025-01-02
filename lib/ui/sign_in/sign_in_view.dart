@@ -58,28 +58,61 @@ class SignInView extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   bottom: 20,
                 ),
-                child: Obx(() {
-                  if (_signInViewModel.isLoggedIn.value) {
-                    return Column(
-                      children: [
-                        const Text('로그인 성공'),
-                        ElevatedButton(
-                          onPressed: () {
-                            _signInViewModel.logout();
-                          },
-                          child: const Text('로그아웃 버튼'),
+                child: Obx(
+                  () {
+                    if (_signInViewModel.isLoggedIn.value) {
+                      return Column(
+                        children: [
+                          const Text('로그인 성공'),
+                          ElevatedButton(
+                            onPressed: () {
+                              _signInViewModel.logout();
+                            },
+                            child: const Text('로그아웃 버튼'),
+                          ),
+                        ],
+                      );
+                    } else {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 20,
                         ),
-                      ],
-                    );
-                  } else {
-                    return ElevatedButton(
-                      onPressed: () {
-                        _signInViewModel.loginWithKakao();
-                      },
-                      child: const Text('카카오 로그인'),
-                    );
-                  }
-                }),
+                        child: GestureDetector(
+                          onTap: () {
+                            _signInViewModel.loginWithKakao();
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.yellow,
+                            ),
+                            width: double.infinity,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SvgPicture.asset(
+                                  'assets/icon/kakao_login.svg',
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(
+                                    top: 16,
+                                    bottom: 16,
+                                    left: 6,
+                                  ),
+                                  child: SText(
+                                    text: '카카오로 시작하기',
+                                    type: TextType.title2,
+                                    color: Color(0xFF213546),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                  },
+                ),
               ),
             ),
           ],

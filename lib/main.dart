@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:get/get.dart';
 import 'package:kakao_flutter_sdk_user/kakao_flutter_sdk_user.dart';
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
@@ -9,8 +10,10 @@ import 'package:sym_mvvm_clone/ui/sign_in/sign_in_view.dart';
 import 'package:sym_mvvm_clone/ui/splash/splash_view.dart';
 
 void main() async {
+  await dotenv.load(fileName: 'assets/config/.env');
   WidgetsFlutterBinding.ensureInitialized();
-  KakaoSdk.init(nativeAppKey: '61c510eaab6ee9f65a2011f944ce8b86');
+  String? kakaoNativeAppKey = dotenv.env['KAKAO_API_KEY'];
+  KakaoSdk.init(nativeAppKey: kakaoNativeAppKey);
   runApp(const MyApp());
 }
 

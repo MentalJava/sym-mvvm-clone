@@ -5,6 +5,8 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+def localProperties = new Properties()
+
 android {
     namespace = "com.example.sym_mvvm_clone"
     compileSdk = flutter.compileSdkVersion
@@ -28,6 +30,7 @@ android {
         targetSdk = 33
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        manifestPlaceholders += [KAKAO_NATIVE_KEY: localProperties['KAKAO_NATIVE_KEY'] ?: 'default_value']
     }
 
     buildTypes {
@@ -42,3 +45,5 @@ android {
 flutter {
     source = "../.."
 }
+
+

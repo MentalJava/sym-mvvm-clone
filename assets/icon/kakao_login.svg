@@ -1,0 +1,4 @@
+<svg fill="none" height="30" viewBox="0 0 31 30" width="31" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<pattern id="a" height="1" patternContentUnits="objectBoundingBox" width="1">
+</pattern>
+<path d="m.5 0h30v30h-30z" fill="url(#a)"/></svg>
