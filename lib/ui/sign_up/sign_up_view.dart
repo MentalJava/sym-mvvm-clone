@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:sym_mvvm_clone/data/repository/sign_up_repository/sign_up_repository_impl.dart';
 import 'package:sym_mvvm_clone/ui/component/s_button.dart';
 import 'package:sym_mvvm_clone/ui/component/s_color.dart';
 import 'package:sym_mvvm_clone/ui/component/s_text.dart';
@@ -9,7 +8,7 @@ import 'package:sym_mvvm_clone/ui/component/s_typo.dart';
 import 'package:sym_mvvm_clone/ui/sign_up/sign_up_view_model.dart';
 
 class SignUpView extends StatelessWidget {
-  final _signUpViewModel = Get.put(SignUpViewModel(SignUpRepositoryImpl()));
+  final _signUpViewModel = Get.put(SignUpViewModel());
 
   SignUpView({super.key});
 
@@ -48,7 +47,7 @@ class SignUpView extends StatelessWidget {
               hintText: '닉네임을 입력해주세요',
               helperText: _signUpViewModel.helperText.value,
               onChanged: (value) {
-                _signUpViewModel.nicknameValidate(value!);
+                _signUpViewModel.nicknameVaildate(value!);
               },
               vaild: _signUpViewModel.isVaild.value,
             ),
