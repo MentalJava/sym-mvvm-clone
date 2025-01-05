@@ -47,7 +47,9 @@ class SignUpView extends StatelessWidget {
               hintText: '닉네임을 입력해주세요',
               helperText: _signUpViewModel.helperText.value,
               onChanged: (value) {
-                _signUpViewModel.nicknameVaildate(value!);
+                if (value != null) {
+                  _signUpViewModel.nicknameVaildate(value);
+                }
               },
               vaild: _signUpViewModel.isVaild.value,
             ),
