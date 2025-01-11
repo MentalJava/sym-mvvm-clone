@@ -54,8 +54,19 @@ class HomeView extends StatelessWidget {
                   color: SColor.main,
                 ),
               ),
-              CustomCalendar(
-                homeViewModel: _homeViewModel,
+              Obx(
+                () => CustomCalendar(
+                  focusedDay: _homeViewModel.focusedDay.value,
+                  selectedDay: _homeViewModel.selectedDay.value,
+                  selectedMonth: _homeViewModel.selectedMonth.value,
+                  selectedYear: _homeViewModel.selectedYear.value,
+                  selectDay: ({required focusedDay, required selectedDay}) {
+                    _homeViewModel.selectDay(focusedDay, selectedDay);
+                  },
+                  updateYearMonth: ({required year, required month}) {
+                    _homeViewModel.updateYearMonth(year, month);
+                  },
+                ),
               ),
             ],
           ),
