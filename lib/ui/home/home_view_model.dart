@@ -10,4 +10,11 @@ class HomeViewModel extends GetxController {
     selectedDay.value = newSeletedDay;
     focusedDay.value = newFocusedDay;
   }
+
+  void updateYearMonth(int newSelectedyear, int newSelectedmonth) {
+    selectedYear.value = newSelectedyear;
+    selectedMonth.value = newSelectedmonth;
+    focusedDay.value =
+        DateTime(selectedYear.value, selectedMonth.value, focusedDay.value.day);
+  }
 }
