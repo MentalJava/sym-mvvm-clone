@@ -60,11 +60,11 @@ class HomeView extends StatelessWidget {
                   selectedDay: _homeViewModel.selectedDay.value,
                   selectedMonth: _homeViewModel.selectedMonth.value,
                   selectedYear: _homeViewModel.selectedYear.value,
-                  selectDay: ({required focusedDay, required selectedDay}) {
+                  selectDay: (focusedDay, selectedDay) {
                     _homeViewModel.selectDay(focusedDay, selectedDay);
                   },
-                  updateYearMonth: ({required year, required month}) {
-                    _homeViewModel.updateYearMonth(year, month);
+                  updateYearMonth: (selectedYear, selectedMonth) {
+                    _homeViewModel.updateYearMonth(selectedYear, selectedMonth);
                   },
                 ),
               ),
